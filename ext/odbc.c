@@ -4386,6 +4386,7 @@ do_option(int argc, VALUE *argv, VALUE self, int isstmt, int op)
 //    }else{
 //        rb_scan_args(argc, argv, "01", &val, &val2);
 //    }
+    printf("[%d]-[%s]- [%d]",argc, argv, op  );
     rb_scan_args(argc, argv, (op == -1) ? "11" : "01", &val, &val2);
     if (isstmt) {
 	Data_Get_Struct(self, STMT, q);
