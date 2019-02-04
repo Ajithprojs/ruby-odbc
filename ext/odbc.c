@@ -4381,12 +4381,11 @@ do_option(int argc, VALUE *argv, VALUE self, int isstmt, int op)
     SQLINTEGER v;
     char *msg;
     int level = isstmt ? OPT_LEVEL_STMT : OPT_LEVEL_DBC;
-//    if(op == -1) {
-//        rb_scan_args(argc, argv, "11", &val, &val2);
-//    }else{
-//        rb_scan_args(argc, argv, "01", &val, &val2);
-//    }
-    rb_scan_args(argc, argv, "01", &val);
+    if(op == -1) {
+        rb_scan_args(argc, argv, "11", &val, &val2);
+    }else{
+        rb_scan_args(argc, argv, "01", &val, &val2);
+    }
     if (isstmt) {
 	Data_Get_Struct(self, STMT, q);
 	if (q->dbc == Qnil) {
