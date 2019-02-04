@@ -4386,6 +4386,7 @@ do_option(int argc, VALUE *argv, VALUE self, int isstmt, int op)
 //    }else{
 //        rb_scan_args(argc, argv, "01", &val, &val2);
 //    }
+    rb_scan_args(argc, argv, "01", &val, &val2);
     if (isstmt) {
 	Data_Get_Struct(self, STMT, q);
 	if (q->dbc == Qnil) {
