@@ -5,9 +5,9 @@ if ! defined? PLATFORM
 end
 # 2.0+
 #adding this for backward compatible
-#have_header('ruby/thread.h') && have_func('rb_thread_call_without_gvl', 'ruby/thread.h')
+have_header('ruby/thread.h') && have_func('rb_thread_call_without_gvl', 'ruby/thread.h')
 # 1.9-only
-#have_func('rb_thread_blocking_region')
+have_func('rb_thread_blocking_region')
 
 def have_library_ex(lib, func="main", headers=nil)
   checking_for "#{func}() in -l#{lib}" do
